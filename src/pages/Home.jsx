@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Greeting name='tarik' age={37} isStudent />
+            <Greeting name='tarik' age={37} isStudent profeshion="Developer" />
             <Footer />
         </>
     );

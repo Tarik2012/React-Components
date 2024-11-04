@@ -14,6 +14,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import ProjectDashboard from './components/ProjectDashboard ';
+import Personal from './components/Personal';
+
 
 function App() {
   return (
@@ -32,6 +35,8 @@ function App() {
             <Route path="/BuscarElementos" element={<BuscarElementos />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/ProjectDashboard" element={<ProjectDashboard />} />
+            <Route path="/Personal" element={<Personal />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
