@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './pages/Home'; // Correcto, este es tu componente Home
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Corregido para usar Routes en lugar de Switch
+import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Tareas from './components/Tareas';
 import MapComponent from './components/MapComponent';
 import Galeria from './components/Galeria';
@@ -14,17 +14,15 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
-import ProjectDashboard from './components/ProjectDashboard ';
+import ProjectDashboard from './components/ProjectDashboard';
 import Personal from './components/Personal';
-
 
 function App() {
   return (
     <CartProvider>
       <AuthProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/React-Components">
           <Routes>
-            {/* La ruta principal "/" renderiza el componente Home */}
             <Route path="/" element={<Home />} />
             <Route path="/Tareas" element={<Tareas />} />
             <Route path="/MapComponent" element={<MapComponent />} />
