@@ -1,0 +1,20 @@
+Styled-Components para estilizar componentes.
+React Router DOM para manejar rutas.
+PropTypes para validar props.
+Axios para hacer peticiones HTTP.
+Redux para el manejo de estado global (o usar Context API).
+React Icons para íconos.
+React Helmet para manejar el <head>.
+React Hook Form para formularios.
+React Transition Group o Framer Motion para animaciones.
+
+Componentes a crear
+ Lista de Tareas (To-Do List)  // completado
+ Formulario de Registro // completado
+ Galería de Imágenes // completado
+ Buscador en una Lista //
+ API de Clima
+ API de google maps // completado
+ Tienda Online Simulada (Carrito de Compras)//
+ Sistema de Autenticación Simulado 
+ 

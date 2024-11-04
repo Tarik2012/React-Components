@@ -1,0 +1,61 @@
+/* src/components/Galeria.css */
+.my-masonry-grid {
+  display: -webkit-box; /* Soporte para navegadores antiguos */
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -10px; /* Espacio opcional entre columnas */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px; /* Espacio opcional entre columnas */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid img {
+  margin: 60px 0px 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover opcional */
+.my-masonry-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para el Modal */
+
+/* Ajustes para que el modal ocupe toda la pantalla */
+/* Ajustes para el overlay del modal */
+.ReactModal__Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Ajustes para que la imagen se ajuste completamente dentro del modal */
+.ReactModalImage__Content {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Asegura que la imagen ocupe todo el espacio disponible */
+.ReactModalImage__Content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.ant-image-preview-mask {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ) !important; /* Fondo más oscuro para el overlay */
+}
