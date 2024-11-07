@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-<<<<<<< HEAD
 // Contenedor principal del Wrapper
 const Wrapper = styled.div`
   padding: 16px;
@@ -13,8 +12,6 @@ const Wrapper = styled.div`
   }
 `;
 
-=======
->>>>>>> 6bd75b3623fe0351e044fcff93873d6ec1ceaca6
 // Contenedor del menú de navegación, responsivo y fijo en la parte superior
 const NavContainer = styled.nav`
   display: flex;
