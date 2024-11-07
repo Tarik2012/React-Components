@@ -1,12 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD
 import styled from 'styled-components';
 import Home from './pages/Home'; // Componente Home
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Usando Routes en lugar de Switch
-=======
 import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
->>>>>>> 6bd75b3623fe0351e044fcff93873d6ec1ceaca6
 import Tareas from './components/Tareas';
 import MapComponent from './components/MapComponent';
 import Galeria from './components/Galeria';
@@ -19,7 +16,6 @@ import BuscarElementos from './components/BuscarElementos';
 import Login from './components/Login';
 import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
-<<<<<<< HEAD
 import ProtectedRoute from './components/ProtectedRoute'
 import ProjectDashboard from './components/ProjectDashboard '
 import Personal from './components/Personal'
@@ -36,11 +32,6 @@ const Wrapper = styled.div`
         padding: 8px;
     }
 `;
-=======
-import ProtectedRoute from './components/ProtectedRoute';
-import ProjectDashboard from './components/ProjectDashboard';
-import Personal from './components/Personal';
->>>>>>> 6bd75b3623fe0351e044fcff93873d6ec1ceaca6
 
 function App() {
   return (
