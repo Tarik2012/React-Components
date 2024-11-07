@@ -1,14 +1,22 @@
-// src/components/Galeria.js
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
 import { Row, Col, Image } from "antd";
 import images from '../assets/imageData';
-import './Galeria.css'; // Asegúrate de importar los estilos personalizados
+import './Galeria.css'; // Asegúrate de que este archivo existe
 import Header from "./Header";
+
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
 
 const Galeria = () => {
     return (
         <>
-
             <div style={{ padding: '20px' }}>
                 <Header />
                 <Row gutter={[16, 16]}>
@@ -31,4 +39,10 @@ const Galeria = () => {
     );
 };
 
-export default Galeria;
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <Galeria />
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

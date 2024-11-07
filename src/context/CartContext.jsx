@@ -1,4 +1,14 @@
 import React, { createContext, useContext, useState } from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
 
 // Crear el contexto
 const CartContext = createContext();
@@ -31,3 +41,14 @@ export const CartProvider = ({ children }) => {
         </CartContext.Provider>
     );
 };
+
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <CartProvider>
+            {/* Aquí puedes incluir contenido que utilice el contexto del carrito */}
+            <div>Contenido que utiliza el contexto del carrito.</div>
+        </CartProvider>
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

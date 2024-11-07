@@ -1,8 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
-import styled from 'styled-components';
 import Header from './Header';
+
+// Componente Wrapper
+const Wrapper = styled.div`
+  padding: 20px;               /* Espaciado interior */
+  /* Puedes añadir más estilos si es necesario */
+`;
 
 // Contenedor principal para centrar el formulario y ocupar todo el ancho
 const FormContainer = styled.div`
@@ -96,74 +102,80 @@ const ErrorMessage = styled.span`
 `;
 
 const ContactForm = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const onSubmit = (data) => {
-        emailjs.send(
-            'service_gustb2m',        // Tu Service ID
-            'template_32agu8b',       // Tu Template ID
-            {
-                to_name: 'Recipient',        // Nombre fijo o variable
-                from_name: data.name,        // Nombre del remitente
-                from_email: data.email,      // Correo electrónico del remitente
-                message: data.message        // Mensaje del formulario
-            },
-            'fvnQl0AwI21ueRFZz'             // Tu User ID
-        )
-            .then((result) => {
-                console.log('Email enviado:', result.text);
-                reset(); // Resetea el formulario después de enviarlo
-                alert('¡Correo enviado con éxito!');
-            })
-            .catch((error) => {
-                console.error('Error al enviar el correo:', error.text);
-                alert('Hubo un error al enviar el correo');
-            });
-    };
+  const onSubmit = (data) => {
+    emailjs.send(
+      'service_gustb2m',        // Tu Service ID
+      'template_32agu8b',       // Tu Template ID
+      {
+        to_name: 'Recipient',        // Nombre fijo o variable
+        from_name: data.name,        // Nombre del remitente
+        from_email: data.email,      // Correo electrónico del remitente
+        message: data.message        // Mensaje del formulario
+      },
+      'fvnQl0AwI21ueRFZz'             // Tu User ID
+    )
+      .then((result) => {
+        console.log('Email enviado:', result.text);
+        reset(); // Resetea el formulario después de enviarlo
+        alert('¡Correo enviado con éxito!');
+      })
+      .catch((error) => {
+        console.error('Error al enviar el correo:', error.text);
+        alert('Hubo un error al enviar el correo');
+      });
+  };
 
-    return (
-        <> <Header />
+  return (
+    <>
+      <Header />
+      <FormContainer>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <FormGroup>
+            <Label>Nombre</Label>
+            <Input
+              {...register('name', { required: 'Nombre es requerido' })}
+              type="text"
+            />
+            {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
+          </FormGroup>
 
-            <FormContainer>
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                    <FormGroup>
-                        <Label>Nombre</Label>
-                        <Input
-                            {...register('name', { required: 'Nombre es requerido' })}
-                            type="text"
-                        />
-                        {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
-                    </FormGroup>
+          <FormGroup>
+            <Label>Correo Electrónico</Label>
+            <Input
+              {...register('email', {
+                required: 'Correo electrónico es requerido',
+                pattern: {
+                  value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                  message: 'Formato de correo inválido'
+                }
+              })}
+              type="email"
+            />
+            {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+          </FormGroup>
 
-                    <FormGroup>
-                        <Label>Correo Electrónico</Label>
-                        <Input
-                            {...register('email', {
-                                required: 'Correo electrónico es requerido',
-                                pattern: {
-                                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                                    message: 'Formato de correo inválido'
-                                }
-                            })}
-                            type="email"
-                        />
-                        {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
-                    </FormGroup>
+          <FormGroup>
+            <Label>Mensaje</Label>
+            <Textarea
+              {...register('message', { required: 'Mensaje es requerido' })}
+              rows="4"
+            />
+            {errors.message && <ErrorMessage>{errors.message.message}</ErrorMessage>}
+          </FormGroup>
 
-                    <FormGroup>
-                        <Label>Mensaje</Label>
-                        <Textarea
-                            {...register('message', { required: 'Mensaje es requerido' })}
-                            rows="4"
-                        />
-                        {errors.message && <ErrorMessage>{errors.message.message}</ErrorMessage>}
-                    </FormGroup>
-
-                    <Button type="submit">Enviar</Button>
-                </Form>
-            </FormContainer>
-        </>
-    );
+          <Button type="submit">Enviar</Button>
+        </Form>
+      </FormContainer>
+    </>
+  );
 };
 
-export default ContactForm;
+const ResponsiveComponent = () => (
+  <Wrapper>
+    <ContactForm />
+  </Wrapper>
+);
+
+export default ResponsiveComponent;

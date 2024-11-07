@@ -16,5 +16,21 @@ Componentes a crear
  API de Clima
  API de google maps // completado
  Tienda Online Simulada (Carrito de Compras)//
- Sistema de Autenticación Simulado 
+ Sistema de Autenticación Simulado //
  
+ sigiente paso 
+ Chat en Tiempo Real: Crea un chat usando sockets (por ejemplo, con Socket.IO) para mensajes instantáneos entre usuarios.
+
+Gestor de Notas: Permite a los usuarios crear, editar y organizar notas, con la opción de categorizar y etiquetar.
+
+Dashboard Interactivo: Muestra gráficos y estadísticas con bibliotecas como Recharts para visualizar datos importantes.// completado
+
+Aplicación de Calendario: Implementa un calendario que gestione eventos, con opciones de recordatorio para fechas importantes.
+
+Sistema de Comentarios: Un componente para dejar comentarios en publicaciones, con funciones de "me gusta" y respuesta.
+
+Aplicación de Traducción: Usa una API de traducción para convertir texto a diferentes idiomas en tiempo real.
+
+App de Temporizador o Pomodoro: Una herramienta de productividad con temporizadores ajustables y alertas para intervalos de trabajo.
+
+Blog con Markdown: Permite a los usuarios escribir y publicar artículos en formato Markdown, con vista previa en tiempo real.

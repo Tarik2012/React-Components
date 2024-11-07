@@ -1,5 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
 
 const ContainerFooter = styled.footer`
   background-color: #333;
@@ -21,4 +30,10 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <Footer />
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

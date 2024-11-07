@@ -1,5 +1,15 @@
-import React, { useContext, useState } from "react";
-import Header from "./Header";
+import React from 'react';
+import styled from 'styled-components';
+import Header from './Header';
+
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
 
 const Register = () => {
     return (
@@ -8,6 +18,12 @@ const Register = () => {
             <h2>Hola desde Register</h2>
         </>
     );
-}
+};
 
-export default Register;
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <Register />
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

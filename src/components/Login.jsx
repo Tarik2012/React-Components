@@ -1,11 +1,24 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import Header from './Header';
-import simulatedUsers from '../assets/simulatedUsers'
+import simulatedUsers from '../assets/simulatedUsers';
 import { AuthContext } from '../context/AuthContext';
 
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
+
 const Login = () => {
-    const { login } = useContext(AuthContext)
+    const { login } = useContext(AuthContext);
+    const navigate = useNavigate(); // Inicializa useNavigate
+
     // Configura useForm
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -19,14 +32,15 @@ const Login = () => {
         if (user) {
             // Si el usuario es válido, muestra un mensaje de éxito
             console.log('¡Autenticación exitosa!');
-            // Aquí puedes redirigir al usuario a un Dashboard o guardar el estado de autenticación
+            // Llama a la función de inicio de sesión del contexto
             login();
+            // Redirige al usuario al componente ProductList
+            navigate('/ProductList'); // Redirige a la ruta especificada
         } else {
             // Si las credenciales son incorrectas, muestra un mensaje de error
             console.log('Usuario o contraseña incorrectos');
         }
     };
-
 
     return (
         <div>
@@ -61,4 +75,10 @@ const Login = () => {
     );
 };
 
-export default Login;
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <Login />
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

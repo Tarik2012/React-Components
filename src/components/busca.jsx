@@ -1,4 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import { useState } from 'react';
+
+const Wrapper = styled.div`
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
 
 const SearchableList = () => {
     // Lista simulada de elementos
@@ -9,7 +20,7 @@ const SearchableList = () => {
         'Dátil',
         'Uva',
         'Higo',
-        'Kiwi'
+        'Kiwi',
     ];
 
     // Estado para el término de búsqueda
@@ -21,7 +32,7 @@ const SearchableList = () => {
     };
 
     // Filtrando los elementos que incluyen el término de búsqueda
-    const filteredItems = items.filter(item =>
+    const filteredItems = items.filter((item) =>
         item.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -43,4 +54,10 @@ const SearchableList = () => {
     );
 };
 
-export default SearchableList;
+const ResponsiveComponent = () => (
+    <Wrapper>
+        <SearchableList />
+    </Wrapper>
+);
+
+export default ResponsiveComponent;

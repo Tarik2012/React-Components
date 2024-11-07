@@ -1,6 +1,7 @@
 import React from 'react';
-import Home from './pages/Home'; // Correcto, este es tu componente Home
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Corregido para usar Routes en lugar de Switch
+import styled from 'styled-components';
+import Home from './pages/Home'; // Componente Home
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Usando Routes en lugar de Switch
 import Tareas from './components/Tareas';
 import MapComponent from './components/MapComponent';
 import Galeria from './components/Galeria';
@@ -13,7 +14,22 @@ import BuscarElementos from './components/BuscarElementos';
 import Login from './components/Login';
 import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute'
+import ProjectDashboard from './components/ProjectDashboard '
+import Personal from './components/Personal'
+
+
+
+
+
+const Wrapper = styled.div`
+    padding: 16px;
+    max-width: 1200px;
+    margin: auto;
+    @media (max-width: 768px) {
+        padding: 8px;
+    }
+`;
 
 function App() {
   return (
@@ -27,11 +43,13 @@ function App() {
             <Route path="/MapComponent" element={<MapComponent />} />
             <Route path="/Galeria" element={<Galeria />} />
             <Route path="/ContactForm" element={<ContactForm />} />
-            <Route path="/ProductList" element={<ProtectedRoute element={<ProductList />} />} />
+            <Route path="/productlist" element={<ProtectedRoute element={<ProductList />} />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path="/BuscarElementos" element={<BuscarElementos />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/ProjectDashboard" element={<ProjectDashboard />} />
+            <Route path="/Personal" element={<Personal />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
@@ -39,4 +57,10 @@ function App() {
   );
 }
 
-export default App;
+const ResponsiveComponent = () => (
+  <Wrapper>
+    <App />
+  </Wrapper>
+);
+
+export default ResponsiveComponent;

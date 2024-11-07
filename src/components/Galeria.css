@@ -1,5 +1,4 @@
-/* src/components/Galeria.css */
-.my-masonry-grid {
+src/components/Galeria.css .my-masonry-grid {
   display: -webkit-box; /* Soporte para navegadores antiguos */
   display: -ms-flexbox;
   display: flex;
