@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Home from './pages/Home'; // Componente Home
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Usando Routes en lugar de Switch
-import Home from './pages/Home';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Tareas from './components/Tareas';
 import MapComponent from './components/MapComponent';
 import Galeria from './components/Galeria';
@@ -50,7 +48,6 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/ProjectDashboard" element={<ProjectDashboard />} />
-            <Route path="/Personal" element={<Personal />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

@@ -79,7 +79,6 @@ const Header = () => {
       <StyledNavLink to="/Login">Login</StyledNavLink>
       <StyledNavLink to="/Register">Register</StyledNavLink>
       <StyledNavLink to="/ProjectDashboard">Dashboard</StyledNavLink>
-      <StyledNavLink to="/Personal">Personal</StyledNavLink>
     </NavContainer>
   );
 };
