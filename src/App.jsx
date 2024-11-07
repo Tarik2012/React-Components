@@ -16,7 +16,7 @@ import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute'
 import ProjectDashboard from './components/ProjectDashboard '
-import Personal from './components/Personal'
+
 
 
 
