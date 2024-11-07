@@ -17,11 +17,7 @@ const Home = () => {
     return (
         <>
             <Header />
-<<<<<<< HEAD
-            <Greeting name="Tarik" age={37} isStudent />
-=======
             <Greeting name='tarik' age={37} isStudent profeshion="Developer" />
->>>>>>> 6bd75b3623fe0351e044fcff93873d6ec1ceaca6
             <Footer />
         </>
     );
