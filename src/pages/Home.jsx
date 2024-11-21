@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Greeting name='tarik' age={37} isStudent profeshion="Developer" />
+            <Greeting name='tarik' age={37} isStudent profession="Developer" />
             <Footer />
         </>
     );

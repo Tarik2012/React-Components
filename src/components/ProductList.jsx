@@ -71,6 +71,8 @@ const ProductList = () => {
     return (
         <>
             <Header />
+            <p>usuario:user1</p>
+            <p>contraseña:user1</p>
             <ProductListContainer>
                 {products.length > 0 ? (
                     products.map((producto) => (

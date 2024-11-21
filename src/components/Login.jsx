@@ -46,6 +46,8 @@ const Login = () => {
         <div>
             <Header />
             <h2>Login</h2>
+            <h4>user:user1</h4>
+            <h4>contraseña:12345</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Campo de Usuario */}
                 <div>
